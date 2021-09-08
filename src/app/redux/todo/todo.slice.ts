@@ -16,7 +16,7 @@ const functions = (state,action) =>{
         newValue = newValue.concat(action.payload)
     }
     else if (action.type == "todos/GetTodos"){
-        newValue = todoRepo.GetTodos()
+        newValue = todoService.GetTodos()
     }
     else if (action.type == "todos/UpdateTodo"){
         for (let i = 0; i < newValue.length; i++){
