@@ -1,16 +1,17 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit"
 import Todo from "../../../domain/entities/Todo"
 import TodoRepositoryImpl from "../../../data/repositories/TodoRepositoryImpl"
-
+import TodoService from "../../../domain/usecases/TodoService"
 
 interface CounterState {
     values: Array<Todo>
 }
 const todoRepo = new TodoRepositoryImpl()
+const todoService = new TodoService(todoRepo)
 const initialState = { values: [] } as CounterState
 
 const functions = (state,action) =>{
-    var newValue = todoRepo.GetTodos()
+    var newValue = todoService.GetTodos()
     if (action[1] == "CREATE"){
         newValue = newValue.concat(action[0].payload)
     }
@@ -33,7 +34,7 @@ const functions = (state,action) =>{
             }
           }
     }
-    todoRepo.SetTodo(newValue)
+    todoService.SetTodo(newValue)
     return newValue
 }
 

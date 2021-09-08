@@ -7,7 +7,6 @@ export default class TodoServiceImpl {
     constructor(td: TodoRepository) {
         this.todoRepo = td
     }
-
     GetTodos(): Array<Todo> {
         return this.todoRepo.GetTodos()
     }

@@ -22,6 +22,7 @@ export const fetchList = createAsyncThunk("plantSlice/fetchList", async () => {
     const plants = await plantService.GetPlants()
     return plants
 })
+
 export const plantSlice = createSlice({
     name: "plantSlice",
     // `createSlice` will infer the state type from the `initialState` argument

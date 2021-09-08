@@ -9,7 +9,6 @@ export default class TodoRepositoryImpl implements TodoRepository {
         else {
             return []
         }
-        
     }
     SetTodo(todo: Array<Todo>): any {
         localStorage.setItem("todos", JSON.stringify(todo))

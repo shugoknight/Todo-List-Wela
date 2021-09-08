@@ -15,6 +15,7 @@ export default function TodoList ({ todo }) {
         dispatch(UpdateTodo(new Todo(todo.id,e.target.value,todo.isDone)))
     }
     const onCheck = () => {
+        console.log(todo.id,todo.isDone)
         dispatch(UpdateTodo(new Todo(todo.id,todo.title,!todo.isDone)))
     }
 
