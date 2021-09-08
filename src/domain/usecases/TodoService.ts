@@ -13,4 +13,13 @@ export default class TodoServiceImpl {
     SetTodo(todo: Array<Todo>): void {
         return this.todoRepo.SetTodo(todo)
     }
+    CreateTodo(todo: Todo): Array<Todo> {
+        return this.todoRepo.CreateTodo(todo)
+    }
+    UpdateTodo(todo: Todo): Array<Todo> {
+        return this.todoRepo.UpdateTodo(todo)
+    }
+    DeleteTodo(todo: Todo): Array<Todo> {
+        return this.todoRepo.DeleteTodo(todo)
+    }
 }
