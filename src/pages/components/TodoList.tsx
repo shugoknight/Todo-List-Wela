@@ -5,7 +5,6 @@ import { useState } from "react";
 
 export default function TodoList ({ todo }) {
     const dispatch = useAppDispatch();
-
     const [title, setNewTitle] = useState(todo.title);
     const onDeleteClicked = () => {
         dispatch(DeleteTodo(todo))
@@ -15,10 +14,8 @@ export default function TodoList ({ todo }) {
         dispatch(UpdateTodo(new Todo(todo.id,e.target.value,todo.isDone)))
     }
     const onCheck = () => {
-        console.log(todo.id,todo.isDone)
         dispatch(UpdateTodo(new Todo(todo.id,todo.title,!todo.isDone)))
     }
-
     return (
         <tr>
             <td>
